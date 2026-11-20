@@ -1,0 +1,121 @@
+/* COMMON MOBILE RESPONSIVENESS */
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* ALL HEADERS */
+    .heading {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 12px;
+    }
+
+    .heading h1 {
+        font-size: 26px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    /* GENERAL CONTENT */
+    .hero,
+    .article-header,
+    .article-content,
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero h2,
+    .article-header h2 {
+        font-size: clamp(28px, 7vw, 42px);
+    }
+
+    p {
+        line-height: 1.7;
+    }
+
+    /* EXPLORE CARDS */
+    .explorecards {
+        grid-template-columns: 1fr;
+    }
+
+    .explorecards > div {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .explorecards img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* ARTICLE IMAGES */
+    .article-image {
+        width: 100%;
+        height: auto;
+    }
+
+    /* FORMS */
+    input,
+    textarea,
+    select {
+        max-width: 100%;
+    }
+
+    #user-question {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* FOOTER */
+    .footer {
+        text-align: center;
+    }
+
+    /* ABOUT AND CONTACT */
+    .about,
+    .contact,
+    .contact-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .heading h1 {
+        font-size: 23px;
+    }
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,308 @@
+
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #171A13;
+    color: #F5EBDD;
+    font-family: Georgia, serif;
+    padding: 35px 8%;
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    padding: 22px;
+    margin-bottom: 90px;
+    border-bottom: 1px solid rgba(197, 166, 106, 0.25);
+    animation: fadeDown 1s ease;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #F5EBDD;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #C5A66A;
+    bottom: -8px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #C5A66A;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ===== ABOUT INTRO ===== */
+
+body > p:first-of-type {
+    color: #C5A66A;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-bottom: 25px;
+    animation: fadeUp 1s ease;
+}
+
+body > h1 {
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 1.05;
+    font-weight: normal;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
+    animation: fadeUp 1.2s ease;
+}
+
+body > h1 br {
+    display: block;
+}
+
+body > h1 + p {
+    color: #B7B99A;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 110px;
+    animation: fadeUp 1.4s ease;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 100px;
+}
+
+/* ===== CARDS ===== */
+
+.main-purpose,
+.our-vision,
+.our-belief {
+    background: linear-gradient(
+        145deg,
+        #292D22,
+        #20241B
+    );
+    border: 1px solid rgba(197, 166, 106, 0.2);
+    border-radius: 18px;
+    padding: 25px;
+    min-height: 420px;
+    overflow: hidden;
+    transition: transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+    animation: fadeUp 1.2s ease;
+}
+
+.main-purpose:hover,
+.our-vision:hover,
+.our-belief:hover {
+    transform: translateY(-12px);
+    border-color: #C5A66A;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== CARD IMAGES ===== */
+
+.main-purpose img,
+.our-vision img,
+.our-belief img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    filter: brightness(0.8);
+    transition: 0.5s ease;
+}
+
+.main-purpose:hover img,
+.our-vision:hover img,
+.our-belief:hover img {
+    filter: brightness(1);
+    transform: scale(1.03);
+}
+
+/* ===== CARD HEADINGS ===== */
+
+.main-purpose h2,
+.our-vision h2,
+.our-belief h2 {
+    font-size: 27px;
+    font-weight: normal;
+    color: #C5A66A;
+    margin-bottom: 18px;
+}
+
+/* ===== CARD PARAGRAPHS ===== */
+
+.main-purpose p,
+.our-vision p,
+.our-belief p {
+    color: #B7B99A;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* ===== CLOSING SECTION ===== */
+
+.hero > h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: clamp(45px, 7vw, 85px);
+    font-weight: normal;
+    color: #F5EBDD;
+    margin-top: 40px;
+    animation: fadeUp 1s ease;
+}
+
+.hero > p {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #C5A66A;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-top: -5px;
+    margin-bottom: 40px;
+}
+
+/* ===== FOOTER ===== */
+
+.FOOTER {
+    border-top: 1px solid rgba(197, 166, 106, 0.3);
+    min-height: 100px;
+    margin-top: 60px;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero > h3,
+    .hero > p {
+        grid-column: 1 / -1;
+    }
+
+    body {
+        padding: 25px 5%;
+    }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 5%;
+    }
+
+    .navbar {
+        gap: 18px;
+        margin-bottom: 65px;
+        padding: 15px 5px;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    body > h1 {
+        font-size: 55px;
+        letter-spacing: -2px;
+    }
+
+    body > h1 + p {
+        font-size: 14px;
+        margin-bottom: 65px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .main-purpose,
+    .our-vision,
+    .our-belief {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .main-purpose img,
+    .our-vision img,
+    .our-belief img {
+        height: 220px;
+    }
+
+    .hero > h3 {
+        font-size: 48px;
+        margin-top: 35px;
+    }
+
+    .hero > p {
+        font-size: 10px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+    }
+}

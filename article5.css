@@ -1,0 +1,277 @@
+* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #171A13;
+    color: #F5EBDD;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* HEADER */
+.heading {
+    background-color: #243D29;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #C5A66A;
+    animation: slideDown 1s ease;
+}
+
+.heading h1 {
+    color: #C5A66A;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #F5EBDD;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #C5A66A;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #C5A66A;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ARTICLE HEADER */
+.article-header {
+    text-align: center;
+    padding: 70px 10%;
+    animation: fadeUp 1.2s ease;
+}
+
+.article-header p:first-child {
+    color: #C5A66A;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.article-header h2 {
+    color: #F5EBDD;
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.article-header p:last-child {
+    max-width: 750px;
+    margin: auto;
+    color: #B7B99A;
+    font-size: 17px;
+}
+
+/* ARTICLE IMAGE */
+.article-image {
+    width: 85%;
+    max-width: 1100px;
+    height: 450px;
+    margin: 0 auto 60px;
+    overflow: hidden;
+    border: 2px solid #C5A66A;
+    border-radius: 15px;
+    animation: fadeUp 1.5s ease;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-image img:hover {
+    transform: scale(1.05);
+}
+
+/* ARTICLE CONTENT */
+.article-content {
+    max-width: 850px;
+    width: 85%;
+    margin: auto;
+}
+
+.article-content section {
+    margin-bottom: 45px;
+    animation: fadeUp 1s ease;
+}
+
+.article-content h2 {
+    color: #C5A66A;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.article-content p {
+    color: #D6D6C2;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* READER QUESTION */
+.reader-question {
+    background-color: #243D29;
+    border: 1px solid #C5A66A;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 35px;
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+.reader-question h2 {
+    color: #C5A66A;
+    margin-bottom: 15px;
+    font-size: 27px;
+}
+
+.reader-question p {
+    color: #F5EBDD;
+    font-size: 17px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #243D29;
+    text-align: center;
+    padding: 25px;
+    border-top: 2px solid #C5A66A;
+    color: #B7B99A;
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    .heading {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .article-header {
+        padding: 50px 7%;
+    }
+
+    .article-header h2 {
+        font-size: 30px;
+    }
+
+    .article-header p:last-child {
+        font-size: 15px;
+    }
+
+    .article-image {
+        width: 90%;
+        height: 280px;
+    }
+
+    .article-content {
+        width: 88%;
+    }
+
+    .article-content h2 {
+        font-size: 21px;
+    }
+
+    .article-content p {
+        font-size: 15px;
+    }
+
+    .reader-question {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 480px) {
+
+    .heading h1 {
+        font-size: 25px;
+    }
+
+    .article-header h2 {
+        font-size: 25px;
+    }
+
+    .article-image {
+        height: 220px;
+    }
+
+    .article-content h2 {
+        font-size: 19px;
+    }
+
+    .reader-question h2 {
+        font-size: 23px;
+    }
+}

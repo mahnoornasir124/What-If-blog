@@ -1,0 +1,397 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #171A13;
+    color: #F5EBDD;
+}
+
+/* HEADER */
+.heading {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    background-color: #171A13;
+    border-bottom: 1px solid #77745E;
+}
+
+.heading h1 {
+    font-size: 32px;
+    color: #F5EBDD;
+    letter-spacing: 3px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #F5EBDD;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #B7B99A;
+    transform: translateY(-3px);
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    padding: 35px 60px 50px;
+    background: linear-gradient(135deg, #171A13, #29291F);
+}
+
+/* EXPLORE BUTTON */
+#neon {
+    padding: 10px 25px;
+    border: 1px solid #B7B99A;
+    border-radius: 30px;
+    background: transparent;
+    color: #F5EBDD;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#neon:hover {
+    background-color: #B7B99A;
+    color: #171A13;
+}
+
+/* MAIN HEADING */
+.hero h2 {
+    font-size: 65px;
+    max-width: 750px;
+    color: #F5EBDD;
+    margin-bottom: 45px;
+    line-height: 1.1;
+    font-weight: normal;
+    text-shadow: 0 0 15px rgba(245, 235, 221, 0.15);
+}
+
+/* CARDS CONTAINER */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
+
+/* INDIVIDUAL CARDS */
+.card1,
+.card2,
+.card3 {
+    flex: 1;
+    background-color: #F5EBDD;
+    color: #24251D;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #D5C9B5;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* CARD IMAGES */
+.card1 img,
+.card2 img,
+.card3 img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CARD HEADINGS */
+.card1 h3,
+.card2 h3,
+.card3 h3 {
+    font-size: 24px;
+    margin: 20px 20px 10px;
+    color: #25271D;
+}
+
+/* CARD PARAGRAPHS */
+.card1 p,
+.card2 p,
+.card3 p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 20px 25px;
+    color: #555344;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    .heading {
+        padding: 0 20px;
+        height: auto;
+        min-height: 85px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navbar {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        font-size: 15px;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card1,
+    .card2,
+    .card3 {
+        width: 100%;
+    }
+}
+ .footer h3{
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+    
+ }
+ .footer p{
+    text-align: center;
+ }
+
+ 
+.navbar a {
+    color: #F5EBDD;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background-color: #C5A66A;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #C5A66A;
+    transform: translateY(-3px);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   EXPLORE PAGE ANIMATIONS
+========================= */
+
+/* HERO HEADING */
+
+.hero h2 {
+    animation: exploreTitle 1.4s ease both;
+}
+
+@keyframes exploreTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(70px) scale(0.8);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* GLOWING HEADING */
+
+.hero h2 {
+    animation:
+        exploreTitle 1.4s ease both,
+        exploreGlow 3s ease-in-out 1.4s infinite;
+}
+
+@keyframes exploreGlow {
+    0%, 100% {
+        text-shadow: 0 0 8px rgba(197, 166, 106, 0.2);
+    }
+
+    50% {
+        text-shadow: 0 0 25px rgba(197, 166, 106, 0.7);
+    }
+}
+
+/* HERO PARAGRAPH */
+
+.hero p {
+    animation: paragraphReveal 1.5s ease 0.3s both;
+}
+
+@keyframes paragraphReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CARDS APPEAR ONE BY ONE */
+
+.card1 {
+    animation: cardReveal 0.8s ease 0.2s both;
+}
+
+.card2 {
+    animation: cardReveal 0.8s ease 0.4s both;
+}
+
+.card3 {
+    animation: cardReveal 0.8s ease 0.6s both;
+}
+
+.card4 {
+    animation: cardReveal 0.8s ease 0.8s both;
+}
+
+.card5 {
+    animation: cardReveal 0.8s ease 1s both;
+}
+
+.card6 {
+    animation: cardReveal 0.8s ease 1.2s both;
+}
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(60px) rotateX(10deg);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+        filter: blur(0);
+    }
+}
+
+/* CARD HOVER */
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6 {
+    transition: all 0.4s ease;
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover,
+.card5:hover,
+.card6:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(197, 166, 106, 0.25);
+}
+
+/* IMAGE ZOOM */
+
+.card1 img,
+.card2 img,
+.card3 img,
+.card4 img,
+.card5 img,
+.card6 img {
+    transition: transform 0.6s ease;
+}
+
+.card1:hover img,
+.card2:hover img,
+.card3:hover img,
+.card4:hover img,
+.card5:hover img,
+.card6:hover img {
+    transform: scale(1.1);
+}
+
+/* NAVBAR UNDERLINE */
+
+.navbar a {
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -8px;
+    background: #C5A66A;
+    transition: width 0.4s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero h2,
+    .hero p,
+    .card1,
+    .card2,
+    .card3,
+    .card4,
+    .card5,
+    .card6 {
+        animation: none;
+    }
+}
+
